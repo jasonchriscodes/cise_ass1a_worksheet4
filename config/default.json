@@ -1,0 +1,4 @@
+{
+  "mongoURI":
+    "mongodb+srv://DbSeed:Pa$$w0rd@cluster0.4vcfnka.mongodb.net/?retryWrites=true&w=majority"
+}
