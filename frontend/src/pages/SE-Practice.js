@@ -1,4 +1,4 @@
-import Dropdown from "../components/Dropdown.js";
+import Dropdown from "../components/Searching/Dropdown.js";
 import Table from "../components/evidencetable.js";
 import tablecolumns from "../components/tablecolumns.js";
 import Styles from "../components/tablestyle.js";
