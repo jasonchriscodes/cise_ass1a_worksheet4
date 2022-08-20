@@ -1,12 +1,15 @@
 const express = require('express');
 const connectDB = require('../config/db');
-const server = express();
+const app = express();
+const port = process.env.PORT || 8082;
+
+// routes
+const articles = require('./routes/api/articles');
 
 // Connect Database
 connectDB();
 
-server.get('/', (req, res) => res.send('Hello world!'));
+// use routes
+app.use('/api/articles', articles);
 
-const port = process.env.PORT || 8082;
-
-server.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));

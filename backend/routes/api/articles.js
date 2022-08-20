@@ -9,6 +9,11 @@ const Articles = require('../../models/Articles');
 // @access Public
 router.get('/test', (req, res) => res.send('articles route testing!'));
 
+// @route GET api/articles/home
+// @description Home page
+// @access Public
+router.get('/home', (req, res) => res.send('home page!'));
+
 // @route GET api/articles
 // @description Get all articles
 // @access Public
@@ -21,7 +26,7 @@ router.get('/', (req, res) => {
 // @route GET api/articles/:id
 // @description Get single articles by id
 // @access Public
-router.get('/:article_id', (req, res) => {
+router.get('/:id', (req, res) => {
   Articles.findById(req.params.id)
     .then(articles => res.json(articles))
     .catch(err => res.status(404).json({ nobookfound: 'No Articles found' }));
