@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-// Load Articles model
-const Articles = require('../../models/Articles');
+// Load Repository model
+const Repository = require('../../models/Repository');
 
 // @route GET api/articles/test
 // @description tests articles route
@@ -18,26 +18,26 @@ router.get('/home', (req, res) => res.send('home page!'));
 // @description Get all articles
 // @access Public
 router.get('/', (req, res) => {
-  Articles.find()
+  Repository.find()
     .then(articles => res.json(articles))
-    .catch(err => res.status(404).json({ nobooksfound: 'No Articles found' }));
+    .catch(err => res.status(404).json({ nobooksfound: 'No Repository found' }));
 });
 
 // @route GET api/articles/:id
 // @description Get single articles by id
 // @access Public
 router.get('/:id', (req, res) => {
-  Articles.findById(req.params.id)
+  Repository.findById(req.params.id)
     .then(articles => res.json(articles))
-    .catch(err => res.status(404).json({ nobookfound: 'No Articles found' }));
+    .catch(err => res.status(404).json({ nobookfound: 'No Repository found' }));
 });
 
 // @route GET api/articles
 // @description search for articles
 // @access Public
 router.post('/create', (req, res) => {
-  Articles.create(req.body)
-    .then(articles => res.json({ msg: 'Articles added successfully' }))
+  Repository.create(req.body)
+    .then(articles => res.json({ msg: 'Repository added successfully' }))
     .catch(err => res.status(400).json({ error: 'Unable to add this articles' }));
 });
 
