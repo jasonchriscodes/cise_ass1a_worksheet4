@@ -1,10 +1,27 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const SubmissionForm = () => {
   const { register, handleSubmit } = useForm();
   const [result, setResult] = useState("");
-  const onSubmit = (data) => setResult(JSON.stringify(data));
+  const onSubmit = (data) => {
+    setResult(JSON.stringify(data));
+
+    console.log("DATA", data);
+
+    axios.post("http://localhost:8082/api/articles/create", data, {
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        "Access-Control-Allow-Origin": "*",
+      }
+    })
+    .then((res) => {
+      console.log(res.data);
+    }).catch((error) => {
+      console.log("ERROR", error);
+    })
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -22,7 +39,7 @@ const SubmissionForm = () => {
       </select>
 
       <p>{result}</p>
-      <input type="submit" />
+      <input type="submit"/>
     </form>
   );
 }
