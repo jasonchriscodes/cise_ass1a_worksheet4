@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const connectDB = require('../config/db');
 const app = express();
+const path = require("path");
 const port = process.env.PORT || 8082;
 
 // routes
