@@ -17,4 +17,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/api/articles', articles);
 
+app.use(express.static(path.resolve(__dirname, "./frontend/build")));
+
+app.get("*", function (req, res) {
+  res.sendFile(path.resolve(__dirname, "./frontend/build", "index.html"));
+});
+
 app.listen(port, () => console.log(`Server running on port ${port}`));
