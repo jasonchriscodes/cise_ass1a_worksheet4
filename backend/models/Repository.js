@@ -3,7 +3,7 @@ const { claimTypes } = require('../../config/claimTypes');
 const { levelEvidence } = require('../../config/levelEvidence');
 
 const EvidenceSchema = new mongoose.Schema({
-  author: {
+  authors: {
     type: String,
     required: false,
   },
@@ -15,7 +15,7 @@ const EvidenceSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  year: {
+  pubyear: {
     type: Number,
     required: false,
   },
