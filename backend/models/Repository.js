@@ -15,7 +15,7 @@ const EvidenceSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  pubyear: {
+  year: {
     type: Number,
     required: false,
   },

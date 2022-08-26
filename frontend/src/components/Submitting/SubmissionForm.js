@@ -29,7 +29,7 @@ const SubmissionForm = () => {
       <input {...register("title")} placeholder="Title" />
       <p><input {...register("authors")} placeholder="Authors" /></p>
       <p><input {...register("source")} placeholder="Source" /></p> 
-      <p><input {...register("pubyear")} placeholder="Publication Year" /></p>
+      <p><input {...register("year")} placeholder="Publication Year" /></p>
       <p><input {...register("doi")} placeholder="DOI" /></p>
       <p><input {...register("claim")} placeholder="claim_benefit" /></p>
       <p><input {...register("evidence")} placeholder="level_of_evidence" /></p>
