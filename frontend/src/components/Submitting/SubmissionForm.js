@@ -31,8 +31,8 @@ const SubmissionForm = () => {
       <p><input {...register("source")} placeholder="Source" /></p> 
       <p><input {...register("pubyear")} placeholder="Publication Year" /></p>
       <p><input {...register("doi")} placeholder="DOI" /></p>
-      <p><input {...register("claim_benefit")} placeholder="claim_benefit" /></p>
-      <p><input {...register("level_of_evidence")} placeholder="level_of_evidence" /></p>
+      <p><input {...register("claim")} placeholder="claim_benefit" /></p>
+      <p><input {...register("evidence")} placeholder="level_of_evidence" /></p>
      
       <select {...register("sepractice")}>
         <option value="">Select SE practice...</option>

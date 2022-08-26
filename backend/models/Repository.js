@@ -23,12 +23,12 @@ const EvidenceSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  claim_benefit: {
+  claim: {
     type: String,
     // enum: [claimTypes],
     required: true,
   },
-  level_of_evidence: {
+  evidence: {
     type: String,
     // enum: [levelEvidence],
     required: true,
