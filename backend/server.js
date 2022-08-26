@@ -9,7 +9,9 @@ const articles = require('./routes/api/articles');
 // Connect Database
 connectDB();
 
-// use routes
+var cors = require('cors')
+
+app.use(cors())
 app.use('/api/articles', articles);
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
